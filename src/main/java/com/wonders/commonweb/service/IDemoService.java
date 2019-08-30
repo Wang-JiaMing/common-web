@@ -1,9 +1,7 @@
 package com.wonders.commonweb.service;
 
-import com.wonders.commonweb.model.Table;
+import com.wonders.commonweb.model.DemoTable;
 import com.wonders.commonweb.pages.ResultList;
-
-import java.util.List;
 
 /**
  * @projectName:common-web
@@ -15,6 +13,6 @@ import java.util.List;
  **/
 public interface IDemoService {
 
-    ResultList getAllTableName(Table table);
+    ResultList getAllTableName(DemoTable demoTable);
 
 }

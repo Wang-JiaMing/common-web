@@ -1,6 +1,6 @@
 package com.wonders.commonweb.controller;
 
-import com.wonders.commonweb.model.Table;
+import com.wonders.commonweb.model.DemoTable;
 import com.wonders.commonweb.pages.ResultList;
 import com.wonders.commonweb.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +35,8 @@ public class DemoController {
 
     @RequestMapping("/demoData")
     @ResponseBody
-    public ResultList getDemoData(Table table) {
-        return demoService.getAllTableName(table);
+    public ResultList getDemoData(DemoTable demoTable) {
+        return demoService.getAllTableName(demoTable);
     }
 
 }

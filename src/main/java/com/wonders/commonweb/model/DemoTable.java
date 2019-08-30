@@ -12,7 +12,7 @@ import lombok.Data;
  * @other: 由于引入了lombok，所以不需要生成get/set方法
  **/
 @Data
-public class Table extends CommonModel {
+public class DemoTable extends CommonModel {
 
     private String owner;
     private String tableName;

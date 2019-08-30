@@ -1,6 +1,6 @@
 package com.wonders.commonweb.dao;
 
-import com.wonders.commonweb.model.Table;
+import com.wonders.commonweb.model.DemoTable;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
@@ -21,6 +21,6 @@ public interface IDemoDao {
 
 
     @Select("select table_name tableName from all_tables where owner='${owner}'")
-    List<Table> selectAllTableName(Table table);
+    List<DemoTable> selectAllTableName(DemoTable demoTable);
 
 }

@@ -1006,7 +1006,7 @@
 									Please note that demo server is not configured to save the changes, therefore you may see an error message.
 								</div>
 
-								<table id="grid-table"></table>
+								<demoTable id="grid-demoTable"></demoTable>
 
 								<div id="grid-pager"></div>
 
@@ -1114,7 +1114,7 @@
 			];
 			
 			jQuery(function($) {
-				var grid_selector = "#grid-table";
+				var grid_selector = "#grid-demoTable";
 				var pager_selector = "#grid-pager";
 				
 				
@@ -1168,7 +1168,7 @@
 					//for this example we are using local data
 					subGridRowExpanded: function (subgridDivId, rowId) {
 						var subgridTableId = subgridDivId + "_t";
-						$("#" + subgridDivId).html("<table id='" + subgridTableId + "'></table>");
+						$("#" + subgridDivId).html("<demoTable id='" + subgridTableId + "'></demoTable>");
 						$("#" + subgridTableId).jqGrid({
 							datatype: 'local',
 							data: subgrid_data,
@@ -1218,13 +1218,13 @@
 			        multiboxonly: true,
 			
 					loadComplete : function() {
-						var table = this;
+						var demoTable = this;
 						setTimeout(function(){
-							styleCheckbox(table);
+							styleCheckbox(demoTable);
 							
-							updateActionIcons(table);
-							updatePagerIcons(table);
-							enableTooltips(table);
+							updateActionIcons(demoTable);
+							updatePagerIcons(demoTable);
+							enableTooltips(demoTable);
 						}, 0);
 					},
 			
@@ -1422,9 +1422,9 @@
 				//it causes some flicker when reloading or navigating grid
 				//it may be possible to have some custom formatter to do this as the grid is being created to prevent this
 				//or go back to default browser checkbox styles for the grid
-				function styleCheckbox(table) {
+				function styleCheckbox(demoTable) {
 				/**
-					$(table).find('input:checkbox').addClass('ace')
+					$(demoTable).find('input:checkbox').addClass('ace')
 					.wrap('<label />')
 					.after('<span class="lbl align-top" />')
 			
@@ -1438,7 +1438,7 @@
 			
 				//unlike navButtons icons, action icons in rows seem to be hard-coded
 				//you can change them like this in here if you want
-				function updateActionIcons(table) {
+				function updateActionIcons(demoTable) {
 					/**
 					var replacement = 
 					{
@@ -1447,7 +1447,7 @@
 						'ui-icon-disk' : 'ace-icon fa fa-check green',
 						'ui-icon-cancel' : 'ace-icon fa fa-times red'
 					};
-					$(table).find('.ui-pg-div span.ui-icon').each(function(){
+					$(demoTable).find('.ui-pg-div span.ui-icon').each(function(){
 						var icon = $(this);
 						var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
 						if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
@@ -1456,7 +1456,7 @@
 				}
 				
 				//replace icons with FontAwesome icons like above
-				function updatePagerIcons(table) {
+				function updatePagerIcons(demoTable) {
 					var replacement = 
 					{
 						'ui-icon-seek-first' : 'ace-icon fa fa-angle-double-left bigger-140',
@@ -1464,7 +1464,7 @@
 						'ui-icon-seek-next' : 'ace-icon fa fa-angle-right bigger-140',
 						'ui-icon-seek-end' : 'ace-icon fa fa-angle-double-right bigger-140'
 					};
-					$('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
+					$('.ui-pg-demoTable:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
 						var icon = $(this);
 						var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
 						
@@ -1472,9 +1472,9 @@
 					})
 				}
 			
-				function enableTooltips(table) {
+				function enableTooltips(demoTable) {
 					$('.navtable .ui-pg-button').tooltip({container:'body'});
-					$(table).find('.ui-pg-div').tooltip({container:'body'});
+					$(demoTable).find('.ui-pg-div').tooltip({container:'body'});
 				}
 			
 				//var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');

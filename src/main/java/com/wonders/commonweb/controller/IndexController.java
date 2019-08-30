@@ -1,14 +1,7 @@
 package com.wonders.commonweb.controller;
 
-import com.wonders.commonweb.dao.IDemoDao;
-import com.wonders.commonweb.model.Table;
-import com.wonders.commonweb.pages.ResultList;
-import com.wonders.commonweb.service.IDemoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @projectName:common-web

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+
+<!--主要js代码需要在th:fragment里-->
+<div th:fragment="testPage">
+
+    <div class="page-header">
+        <h1>
+            Dashboard
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                overview &amp; stats
+            </small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="panel-body" style="width: 100%;height:400px;margin-bottom: 50px;">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-1" style="height: 34px;text-align: right;margin-top: 7px;"><strong>机构名称</strong></div>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="tableName" name="tableName">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-sm btn-primary ">查询</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <table id="tableGrid"  style="table-layout:fixed"></table>
+        </div>
+    </div>
+
+
+    <script th:inline="javascript">
+
+        $(function () {
+            //初始化表格数据
+            $('#tableGrid').bootstrapTable({
+                url: "../indexPage/demoData", // 获取表格数据的url
+                cache: false, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+                striped: true,  //表格显示条纹，默认为false
+                pagination: true, // 在表格底部显示分页组件，默认false
+                pageList: [10, 20, 30, 40, 50], // 设置页面可以显示的数据条数
+                pageSize: 10, // 页面数据条数
+                pageNumber: 1, // 首页页码
+                sidePagination: 'server', // 设置为服务器端分页
+                queryParams:function (params) {
+                    var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                        limit: params.limit,   //页面大小
+                        offset: params.offset,  //页码
+                        owner:'RHIN_APP'
+                    };
+                    return temp;
+                },
+                columns: [{
+                    field: 'tableName',
+                    title: '表名',
+                    width: '110px'
+                }
+                ]
+            })
+        });
+
+
+
+
+
+    </script>
+
+</div>
+</html>

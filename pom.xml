@@ -88,6 +88,12 @@
             <artifactId>pagehelper</artifactId>
             <version>4.1.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.expkit</groupId>
+            <artifactId>expansion-utils</artifactId>
+            <version>2.12</version>
+        </dependency>
     </dependencies>
 
     <build>

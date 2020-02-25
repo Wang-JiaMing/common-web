@@ -1,7 +1,7 @@
 # 通用WEB模板 version 20.2.25.1
 
 ### 前言
-为了快速对业务内容开发，故开发该低层框架，减少重复编码工作。所有后台例子入库均在com.wonders.commonweb.controller.DemoController
+为了快速对业务内容开发，故开发该低层框架，减少重复编码工作。所有后台例子均在com.wonders.commonweb.controller.DemoController
 
 ### 开发规范
 程序会不断更新迭代新特性(特性内容可以查阅更新日志)，更新牵涉路径主要

@@ -82,17 +82,28 @@
             <version>1.16.10</version>
         </dependency>
 
-        <!--分页插件-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>4.1.1</version>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.13</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.expkit</groupId>
             <artifactId>expansion-utils</artifactId>
-            <version>2.12</version>
+            <version>2020.2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.1</version>
         </dependency>
     </dependencies>
 

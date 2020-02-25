@@ -7,6 +7,19 @@
 </head>
 
 <body class="no-skin">
+
+
+<!-- 导出 -->
+<div id ="exportWindow" align = "center">
+    <form id ="exportForm" name ="exportForm" action="" method="post">
+        <input type="hidden" id ="d_filePath" name ="d_filePath" />
+        <input type="hidden" id ="d_downfileName" name ="d_downfileName" />
+    </form>
+</div>
+
+
+
+
 <div id="navbar" class="navbar navbar-default          ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container">
         <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -89,7 +102,10 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        欢迎使用
+                        欢迎使用<br>
+                        <input id="down" th:type="button" th:value="download" onclick="downLoadTemplate('/11.xlsx','测试')"/>
+                        <div th:include="include/uploadFile::uploadFile('../demoPage/importExp')"></div>
+
                     </div>
                 </div>
 
@@ -97,45 +113,26 @@
         </div>
     </div>
 
-    <!--<div class="footer">-->
-    <!--<div class="footer-inner">-->
-    <!--<div class="footer-content">-->
-    <!--<span class="bigger-120">-->
-    <!--<span class="blue bolder">Ace</span>-->
-    <!--Application &copy; 2013-2014-->
-    <!--</span>-->
-
-    <!--&nbsp; &nbsp;-->
-    <!--<span class="action-buttons">-->
-    <!--<a href="#">-->
-    <!--<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>-->
-    <!--</a>-->
-
-    <!--<a href="#">-->
-    <!--<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>-->
-    <!--</a>-->
-
-    <!--<a href="#">-->
-    <!--<i class="ace-icon fa fa-rss-square orange bigger-150"></i>-->
-    <!--</a>-->
-    <!--</span>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">-->
-    <!--<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>-->
-    <!--</a>-->
 </div>
 
 
 <script type="text/javascript">
 
+    // $("#down").click(function(){
+    //     window.location.href="../demoPage/download";
+    // });
 
     function refresh(url) {
-        // alert(url);
         $('.thfwindows').load(url);
 
+    }
+
+    function downLoadTemplate(filePath,downfileName){
+        var exportForm = $('#exportWindow').find('form');
+        exportForm.attr("action",'../down/dowmLoadTemplate');
+        $('#d_filePath').val(filePath);
+        $('#d_downfileName').val(downfileName);
+        exportForm.submit();
     }
 
 </script>

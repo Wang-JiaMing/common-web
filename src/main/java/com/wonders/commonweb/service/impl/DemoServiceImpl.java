@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @projectName:common-web
@@ -31,11 +32,15 @@ public class DemoServiceImpl implements IDemoService {
          * 获取页面传入的行数和页数
          *      使用分页插件进行分页
          */
-        PageHelper.offsetPage(Integer.valueOf(demoTable.getOffset()), Integer.valueOf(demoTable.getLimit()));
+        PageHelper.startPage(Integer.valueOf(demoTable.getOffset()), Integer.valueOf(demoTable.getLimit()));
         List<DemoTable> allTableName=demoDao.selectAllTableName(demoTable);
         PageInfo<DemoTable> pojoPageInfo = new PageInfo<>(allTableName);
         ResultList resultList = new ResultList(pojoPageInfo.getTotal(), allTableName);
         return resultList;
-//        return null;
+    }
+
+    @Override
+    public List<Map<String, Object>> getAllTableName2(DemoTable demoTable) {
+        return demoDao.getListMap(demoTable);
     }
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @projectName:common-web
@@ -22,5 +23,8 @@ public interface IDemoDao {
 
     @Select("select table_name tableName from all_tables where owner='${owner}'")
     List<DemoTable> selectAllTableName(DemoTable demoTable);
+
+    @Select("select table_name tableName from all_tables where owner='${owner}'")
+    List<Map<String,Object>> getListMap(DemoTable demoTable);
 
 }

@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
 <!--上传公用插件-->
-<div th:fragment="uploadFile(url)">
-    <span th:text="${url}"></span>
+<div th:fragment="uploadFile(title,url)">
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" >
+                        <span th:text="${title}"></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input id="uploadFileKit" name="file" type="file" multiple>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <input id="uploadFileKit" name="file" type="file" multiple>
 
     <script th:inline="javascript">
         $(function () {
             $("#uploadFileKit").fileinput();
-
-        })
-
-
+        });
         // 上传附件
         $("#uploadFileKit").fileinput({
             language: 'zh',                                          // 多语言设置，需要引入local中相应的js，例如locales/zh.js
@@ -25,7 +40,7 @@
             showZoom: false,                                         // 显示预览按钮
             showCaption: false,                                  // 显示文件文本框
             dropZoneEnabled: false,                          // 是否可拖拽
-            uploadLabel: "上传附件",                         // 上传按钮内容
+            uploadLabel: "开始上传",                         // 上传按钮内容
             browseLabel: '选择附件',                            // 浏览按钮内容
             showRemove: false,                                       // 显示移除按钮
             browseClass: "layui-btn",                        // 浏览按钮样式
@@ -43,23 +58,12 @@
                 uploadRetryIcon: '<i class="fa fa-repeat"></i>'  // 重试图标
             }
         }).on("fileuploaded", function(event, data) {
-
-            console.log("111----"+data);//没有走这步
+            fileInputMsg(data);
         });
-        // // 上传成功回调
-        // $("#uploadFileKit").on("filebatchuploadcomplete", function () {
-        //     console.info("success");
-        //     layer.msg("上传附件成功");
-        //     setTimeout("closeUpladLayer()", 2000)
-        // });
-        // // 上传失败回调
-        // $('#uploadFileKit').on('fileerror', function (event, data, msg) {
-        //     console.info("error");
-        //
-        //     layer.msg(data.msg);
-        //     tokenTimeOut(data);
-        // });
 
+        function fileInputMsg(data){
+            alert(data.response.msg)
+        }
     </script>
 
 </div>

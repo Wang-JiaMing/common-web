@@ -1,13 +1,12 @@
-package com.wonders.commonweb.controller;
+package com.wonders.commonweb.common.controller;
 
 import com.expansion.excel.ExcelUtils;
-import com.wonders.commonweb.model.DemoTable;
-import com.wonders.commonweb.model.Message;
-import com.wonders.commonweb.pages.ResultList;
-import com.wonders.commonweb.service.IDemoService;
-import com.wonders.commonweb.utils.DataTrans;
-import com.wonders.commonweb.utils.FileUtils;
-import org.apache.poi.hssf.usermodel.*;
+import com.wonders.commonweb.common.model.DemoTable;
+import com.wonders.commonweb.common.model.Message;
+import com.wonders.commonweb.common.pages.ResultList;
+import com.wonders.commonweb.common.service.IDemoService;
+import com.wonders.commonweb.common.utils.DataTrans;
+import com.wonders.commonweb.common.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +46,16 @@ public class DemoController {
     }
 
     /**
+     * thymeleaf局部刷新例子
+     *
+     * @return
+     */
+    @RequestMapping("/impPage")
+    public String impPage() {
+        return "testPage/filePage::testPage";
+    }
+
+    /**
      * datagird例子
      * @param demoTable
      * @return
@@ -74,7 +82,6 @@ public class DemoController {
                 System.out.println("rows");
                 for (String cells : rows) {
                     System.out.println("cells" + cells);
-
                 }
             }
         }

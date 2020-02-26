@@ -1,4 +1,4 @@
-package com.wonders.commonweb.pages;
+package com.wonders.commonweb.common.pages;
 
 import java.io.Serializable;
 import java.util.List;

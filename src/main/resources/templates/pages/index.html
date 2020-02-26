@@ -103,8 +103,6 @@
                 <div class="row">
                     <div class="col-xs-12">
                         欢迎使用<br>
-                        <input id="down" th:type="button" th:value="download" onclick="downLoadTemplate('/11.xlsx','测试')"/>
-                        <div th:include="include/uploadFile::uploadFile('../demoPage/importExp')"></div>
 
                     </div>
                 </div>
@@ -113,14 +111,13 @@
         </div>
     </div>
 
+    <div th:include="include/uploadFile::uploadFile('文件上传','../demoPage/importExp')"></div>
+
+
 </div>
 
 
 <script type="text/javascript">
-
-    // $("#down").click(function(){
-    //     window.location.href="../demoPage/download";
-    // });
 
     function refresh(url) {
         $('.thfwindows').load(url);

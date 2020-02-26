@@ -1,5 +1,6 @@
-package com.wonders.commonweb.controller;
+package com.wonders.commonweb.common.controller;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,11 @@ public class DownFileController {
         try {
             String suffix = filePath.substring(filePath.lastIndexOf("."));
             in = new FileInputStream(new File(ResourceUtils.getURL("classpath:").getPath()+"static/downFiles/"+filePath));//req.getSession().getServletContext().getResourceAsStream(ResourceUtils.getURL("classpath:").getPath()+filePath);
+            if(in==null){
+                ClassPathResource resource = new ClassPathResource("\\static\\downFiles\\"+filePath);
+                in=resource.getInputStream();
+            }
+
             String fileName = downfileName;
             os = response.getOutputStream();
             response.reset();

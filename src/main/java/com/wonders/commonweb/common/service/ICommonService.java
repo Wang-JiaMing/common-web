@@ -1,4 +1,6 @@
-package com.wonders.commonweb.service;
+package com.wonders.commonweb.common.service;
+
+import com.wonders.commonweb.common.pages.ResultList;
 
 import java.util.List;
 import java.util.Map;
@@ -14,5 +16,7 @@ import java.util.Map;
 public interface ICommonService {
 
     List<Map<String,Object>> query(Map<String,String> params);
+
+    ResultList queryForResultList(Map<String,String> params);
 
 }

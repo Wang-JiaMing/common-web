@@ -1,4 +1,4 @@
-package com.wonders.commonweb.controller;
+package com.wonders.commonweb.common.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

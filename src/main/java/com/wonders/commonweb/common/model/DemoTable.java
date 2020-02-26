@@ -1,6 +1,6 @@
-package com.wonders.commonweb.model;
+package com.wonders.commonweb.common.model;
 
-import com.wonders.commonweb.model.common.CommonModel;
+import com.wonders.commonweb.common.model.common.CommonModel;
 import lombok.Data;
 
 /**

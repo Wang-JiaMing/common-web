@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+
+<!--主要js代码需要在th:fragment里-->
+<div th:fragment="testPage">
+
+    <div class="page-header">
+        <h1>
+            特性列表
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                上传文件
+            </small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button" id="impData" class="btn btn-white btn-pink btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">上传文件</button>
+            <input th:type="button" class="btn btn-white btn-pink btn-sm" th:value="下载静态文件" onclick="downLoadTemplate('11.xlsx','测试')"/>
+            <input id="down" type="button" class="btn btn-white btn-pink btn-sm" value="下载数据库动态Excel" />
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#down").click(function () {
+            window.location.href = "../demoPage/download";
+        });
+    </script>
+</div>
+
+
+
+</html>

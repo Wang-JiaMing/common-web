@@ -1,4 +1,4 @@
-package com.wonders.commonweb.dao;
+package com.wonders.commonweb.common.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 

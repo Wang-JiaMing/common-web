@@ -56,6 +56,16 @@ public class DemoController {
     }
 
     /**
+     * thymeleaf局部刷新例子
+     *
+     * @return
+     */
+    @RequestMapping("/autoFomPage")
+    public String autoFomPage() {
+        return "testPage/autoForm::testPage";
+    }
+
+    /**
      * datagird例子
      * @param demoTable
      * @return

@@ -1,4 +1,4 @@
-# 通用WEB框架 version 20.2.26.1
+# 通用WEB框架 version 20.2.27.1
 > author:wangjiaming
 
 ### 前言
@@ -14,23 +14,9 @@
 - html:templates/xxx
 
 ### 更新日志
-- 2020/02/03    加入文件上传模块<br>
->文件上传界面均使用模态窗弹出,通用上传模态弹窗已在include/uploadFile.html
->,只需把弹窗事件绑定即可
-
-```html
-<button type="button" id="impData" class="btn btn-white btn-pink btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">上传文件</button>
-```
+- 2020/02/27   引入自动表单插件
 
 
-- 2020/02/25    加入数据库导出Excel功能，加入静态excel下载功能
->静态文件请存放在static/downFiles下
-**动态excel下载**
-```js
-$("#down").click(function(){
-         window.location.href="../demoPage/download";
-});
-```
 - 2020/02/26   <br> 
 1.加入动态sql分页方法 <br> 
 2.优化静态文件下载兼容性
@@ -71,3 +57,22 @@ $("#down").click(function(){
     }
 ```
 
+
+
+- 2020/02/25    加入数据库导出Excel功能，加入静态excel下载功能
+>静态文件请存放在static/downFiles下
+**动态excel下载**
+```js
+$("#down").click(function(){
+         window.location.href="../demoPage/download";
+});
+```
+
+
+- 2020/02/03    加入文件上传模块<br>
+>文件上传界面均使用模态窗弹出,通用上传模态弹窗已在include/uploadFile.html
+>,只需把弹窗事件绑定即可
+
+```html
+<button type="button" id="impData" class="btn btn-white btn-pink btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">上传文件</button>
+```

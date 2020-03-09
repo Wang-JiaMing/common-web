@@ -1,8 +1,8 @@
-package com.wonders.commonweb.common.service.impl;
+package com.wonders.commonweb.core.service.impl;
 
-import com.wonders.commonweb.common.dao.ICommonDao;
-import com.wonders.commonweb.common.pages.ResultList;
-import com.wonders.commonweb.common.service.ICommonService;
+import com.wonders.commonweb.core.dao.ICommonDao;
+import com.wonders.commonweb.core.pages.ResultList;
+import com.wonders.commonweb.core.service.ICommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

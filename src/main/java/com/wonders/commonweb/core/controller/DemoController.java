@@ -1,12 +1,12 @@
-package com.wonders.commonweb.common.controller;
+package com.wonders.commonweb.core.controller;
 
 import com.expansion.excel.ExcelUtils;
-import com.wonders.commonweb.common.model.DemoTable;
-import com.wonders.commonweb.common.model.Message;
-import com.wonders.commonweb.common.pages.ResultList;
-import com.wonders.commonweb.common.service.IDemoService;
-import com.wonders.commonweb.common.utils.DataTrans;
-import com.wonders.commonweb.common.utils.FileUtils;
+import com.wonders.commonweb.core.model.DemoTable;
+import com.wonders.commonweb.core.model.Message;
+import com.wonders.commonweb.core.pages.ResultList;
+import com.wonders.commonweb.core.service.IDemoService;
+import com.wonders.commonweb.core.utils.DataTrans;
+import com.wonders.commonweb.core.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

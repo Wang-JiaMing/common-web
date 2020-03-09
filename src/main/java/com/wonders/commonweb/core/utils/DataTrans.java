@@ -1,4 +1,4 @@
-package com.wonders.commonweb.common.utils;
+package com.wonders.commonweb.core.utils;
 
 import java.util.ArrayList;
 import java.util.List;

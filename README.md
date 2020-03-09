@@ -6,7 +6,7 @@
 
 ### 开发规范
 程序会不断更新迭代新特性(特性内容可以查阅更新日志)，更新牵涉路径主要
-- java:com.wonders.commonweb.common.**
+- java:com.wonders.commonweb.core.**
 - html:templates/pages
 
 故开发时候请独立建立自己的package和html文件夹，例如

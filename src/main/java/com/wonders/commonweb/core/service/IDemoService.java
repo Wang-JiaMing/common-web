@@ -1,7 +1,7 @@
-package com.wonders.commonweb.common.service;
+package com.wonders.commonweb.core.service;
 
-import com.wonders.commonweb.common.model.DemoTable;
-import com.wonders.commonweb.common.pages.ResultList;
+import com.wonders.commonweb.core.model.DemoTable;
+import com.wonders.commonweb.core.pages.ResultList;
 
 import java.util.List;
 import java.util.Map;

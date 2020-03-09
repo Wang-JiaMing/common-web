@@ -1,11 +1,11 @@
-package com.wonders.commonweb.common.service.impl;
+package com.wonders.commonweb.core.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wonders.commonweb.common.dao.IDemoDao;
-import com.wonders.commonweb.common.model.DemoTable;
-import com.wonders.commonweb.common.pages.ResultList;
-import com.wonders.commonweb.common.service.IDemoService;
+import com.wonders.commonweb.core.dao.IDemoDao;
+import com.wonders.commonweb.core.model.DemoTable;
+import com.wonders.commonweb.core.pages.ResultList;
+import com.wonders.commonweb.core.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

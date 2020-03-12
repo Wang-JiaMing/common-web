@@ -10,7 +10,6 @@ import com.wonders.commonweb.core.utils.FileUtils;
 import com.wonders.commonweb.demo.model.DemoTable;
 import com.wonders.commonweb.demo.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

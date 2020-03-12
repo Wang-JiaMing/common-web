@@ -13,11 +13,13 @@
             </small>
         </h1>
     </div>
+<!--    TODO:自动表单插件 1-->
     <div id="autoForm"></div>
 
 
     <script type="text/javascript">
         $(function(){
+            // TODO:自动表单插件 2
             $('#autoForm').boTable({
                 formId:'addMdFileForm',
                 method:'post',//post或get
@@ -54,7 +56,7 @@
                             {title:"年龄",id:"AGE"},
                             {title:"年龄",id:"AGE",colspan:"5"},
                             {title:"年龄",id:"AGE",formatter:function(){
-                                    return '<select id="11111"></select>'
+                                    return '<select id="11111"><opton></opton></select>'
                                 }},
                         ]
                     },

@@ -1,8 +1,8 @@
-# 通用WEB框架 version 20.2.27.1
+# 通用WEB框架 version 20.3.12.1
 > author:wangjiaming
 
 ### 前言
-为了快速对业务内容开发，故开发该低层框架，减少重复编码工作。所有后台例子均在com.wonders.commonweb.controller.DemoController
+为了快速对业务内容开发，故开发该低层框架，减少重复编码工作。所有后台例子均在com.wonders.commonweb.demo
 
 ### 开发规范
 程序会不断更新迭代新特性(特性内容可以查阅更新日志)，更新牵涉路径主要
@@ -10,12 +10,23 @@
 - html:templates/pages
 
 故开发时候请独立建立自己的package和html文件夹，例如
-- java：com.wonders.commonweb.xxx
+- java：com.wonders.commonweb.xxx.
 - html:templates/xxx
 
-### 更新日志
-- 2020/02/27   引入自动表单插件
+### 特性标签
+- TODO:系统别名
+- TODO:系统变量
+- TODO:文件上传
+- TODO:静态文件导出
+> 注意文件存放位置 resources/static/downFiles
+- TODO:动态Excel下载
+- TODO:自动表单插件
+- TODO:页面排版
 
+### 更新日志
+- 2020/03/12    完善demo用例，引入缓存框架
+
+- 2020/02/27   引入自动表单插件
 
 - 2020/02/26   <br> 
 1.加入动态sql分页方法 <br> 

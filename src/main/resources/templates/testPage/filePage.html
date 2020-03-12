@@ -9,20 +9,26 @@
             特性列表
             <small>
                 <i class="ace-icon fa fa-angle-double-right"></i>
-                上传文件
+                上传下载文件
             </small>
         </h1>
     </div>
     <div class="row">
         <div class="col-sm-12">
+            <!-- TODO:文件上传 1 -->
             <button type="button" id="impData" class="btn btn-white btn-pink btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">上传文件</button>
+
+            <!-- TODO:静态文件导出-->
             <input th:type="button" class="btn btn-white btn-pink btn-sm" th:value="下载静态文件" onclick="downLoadTemplate('11.xlsx','测试')"/>
+
+            <!-- TODO:动态Excel下载 1-->
             <input id="down" type="button" class="btn btn-white btn-pink btn-sm" value="下载数据库动态Excel" />
 
         </div>
     </div>
 
     <script type="text/javascript">
+        // TODO:动态Excel下载 2
         $("#down").click(function () {
             window.location.href = "../demoPage/download";
         });

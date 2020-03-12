@@ -1,6 +1,6 @@
-package com.wonders.commonweb.core.dao;
+package com.wonders.commonweb.demo.dao;
 
-import com.wonders.commonweb.core.model.DemoTable;
+import com.wonders.commonweb.demo.model.DemoTable;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;

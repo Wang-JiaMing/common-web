@@ -7,7 +7,7 @@
 
     <ul class="nav nav-list">
         <li class="active">
-            <a th:onclick="'javascript:refresh(\'../demoPage/demo\')' ">
+            <a th:onclick="'javascript:refreshToDemo(\'index\')' ">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> Dashboard </span>
             </a>
@@ -28,7 +28,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a th:onclick="'javascript:refresh(\'../demoPage/impPage\')' ">
+                    <a th:onclick="'javascript:refresh(\'../myDemo/impPage\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         上传下载文件
                     </a>
@@ -36,11 +36,18 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="">
-                    <a th:onclick="'javascript:refresh(\'../demoPage/autoFomPage\')' ">
+                    <a th:onclick="'javascript:refresh(\'../myDemo/autoFomPage\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         自动表单
                     </a>
 
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a th:onclick="'javascript:refresh(\'../myDemo/demo\')' ">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        页面排版及分页模式
+                    </a>
                     <b class="arrow"></b>
                 </li>
 
@@ -62,7 +69,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a th:onclick="'javascript:refresh(\'../demoPage/download2\')' ">
+                    <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-caret-right"></i>
 
                         Layouts
@@ -73,7 +80,7 @@
 
                     <ul class="submenu">
                         <li class="">
-                            <a href="top-menu.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'top-menu\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Top Menu
                             </a>
@@ -82,7 +89,7 @@
                         </li>
 
                         <li class="">
-                            <a href="two-menu-1.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'two-menu-1\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Two Menus 1
                             </a>
@@ -91,7 +98,7 @@
                         </li>
 
                         <li class="">
-                            <a href="two-menu-2.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'two-menu-2\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Two Menus 2
                             </a>
@@ -100,7 +107,7 @@
                         </li>
 
                         <li class="">
-                            <a href="mobile-menu-1.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'mobile-menu-1\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Default Mobile Menu
                             </a>
@@ -109,7 +116,7 @@
                         </li>
 
                         <li class="">
-                            <a href="mobile-menu-2.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'mobile-menu-2\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Mobile Menu 2
                             </a>
@@ -118,7 +125,7 @@
                         </li>
 
                         <li class="">
-                            <a href="mobile-menu-3.html">
+                            <a th:onclick="'javascript:refreshToDemo(\'mobile-menu-3\')' ">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Mobile Menu 3
                             </a>
@@ -129,7 +136,7 @@
                 </li>
 
                 <li class="">
-                    <a href="typography.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'typography\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Typography
                     </a>
@@ -138,7 +145,7 @@
                 </li>
 
                 <li class="">
-                    <a href="elements.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'elements\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Elements
                     </a>
@@ -147,7 +154,7 @@
                 </li>
 
                 <li class="">
-                    <a href="buttons.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'buttons\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Buttons &amp; Icons
                     </a>
@@ -156,7 +163,7 @@
                 </li>
 
                 <li class="">
-                    <a href="content-slider.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'content-slider\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Content Sliders
                     </a>
@@ -165,7 +172,7 @@
                 </li>
 
                 <li class="">
-                    <a href="treeview.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'treeview\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Treeview
                     </a>
@@ -174,7 +181,7 @@
                 </li>
 
                 <li class="">
-                    <a href="jquery-ui.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'jquery-ui\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         jQuery UI
                     </a>
@@ -183,7 +190,7 @@
                 </li>
 
                 <li class="">
-                    <a href="nestable-list.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'nestable-list\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Nestable Lists
                     </a>
@@ -258,7 +265,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="tables.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'tables\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Simple &amp; Dynamic
                     </a>
@@ -267,7 +274,7 @@
                 </li>
 
                 <li class="">
-                    <a href="jqgrid.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'jqgrid\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         jqGrid plugin
                     </a>
@@ -289,7 +296,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="form-elements.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'form-elements\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Form Elements
                     </a>
@@ -298,7 +305,7 @@
                 </li>
 
                 <li class="">
-                    <a href="form-elements-2.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'form-elements-2\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Form Elements 2
                     </a>
@@ -307,7 +314,7 @@
                 </li>
 
                 <li class="">
-                    <a href="form-wizard.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'form-wizard\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Wizard &amp; Validation
                     </a>
@@ -316,7 +323,7 @@
                 </li>
 
                 <li class="">
-                    <a href="wysiwyg.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'wysiwyg\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Wysiwyg &amp; Markdown
                     </a>
@@ -325,7 +332,7 @@
                 </li>
 
                 <li class="">
-                    <a href="dropzone.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'dropzone\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Dropzone File Upload
                     </a>
@@ -336,7 +343,7 @@
         </li>
 
         <li class="">
-            <a href="widgets.html">
+            <a th:onclick="'javascript:refreshToDemo(\'widgets\')' ">
                 <i class="menu-icon fa fa-list-alt"></i>
                 <span class="menu-text"> Widgets </span>
             </a>
@@ -345,7 +352,7 @@
         </li>
 
         <li class="">
-            <a href="calendar.html">
+            <a th:onclick="'javascript:refreshToDemo(\'calendar\')' ">
                 <i class="menu-icon fa fa-calendar"></i>
 
                 <span class="menu-text">
@@ -361,7 +368,7 @@
         </li>
 
         <li class="">
-            <a href="gallery.html">
+            <a th:onclick="'javascript:refreshToDemo(\'gallery\')' ">
                 <i class="menu-icon fa fa-picture-o"></i>
                 <span class="menu-text"> Gallery </span>
             </a>
@@ -381,7 +388,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="profile.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'profile\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         User Profile
                     </a>
@@ -390,7 +397,7 @@
                 </li>
 
                 <li class="">
-                    <a href="inbox.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'inbox\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Inbox
                     </a>
@@ -399,7 +406,7 @@
                 </li>
 
                 <li class="">
-                    <a href="pricing.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'pricing\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Pricing Tables
                     </a>
@@ -408,7 +415,7 @@
                 </li>
 
                 <li class="">
-                    <a href="invoice.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'invoice\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Invoice
                     </a>
@@ -417,7 +424,7 @@
                 </li>
 
                 <li class="">
-                    <a href="timeline.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'timeline\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Timeline
                     </a>
@@ -426,7 +433,7 @@
                 </li>
 
                 <li class="">
-                    <a href="search.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'search\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Search Results
                     </a>
@@ -435,7 +442,7 @@
                 </li>
 
                 <li class="">
-                    <a href="email.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'email\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Email Templates
                     </a>
@@ -444,7 +451,7 @@
                 </li>
 
                 <li class="">
-                    <a href="login.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'login\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Login &amp; Register
                     </a>
@@ -471,7 +478,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="faq.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'faq\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         FAQ
                     </a>
@@ -480,7 +487,7 @@
                 </li>
 
                 <li class="">
-                    <a href="error-404.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'error-404\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Error 404
                     </a>
@@ -489,7 +496,7 @@
                 </li>
 
                 <li class="">
-                    <a href="error-500.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'error-500\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Error 500
                     </a>
@@ -498,7 +505,7 @@
                 </li>
 
                 <li class="">
-                    <a href="grid.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'grid\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Grid
                     </a>
@@ -507,7 +514,7 @@
                 </li>
 
                 <li class="">
-                    <a href="blank.html">
+                    <a th:onclick="'javascript:refreshToDemo(\'blank\')' ">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Blank Page
                     </a>

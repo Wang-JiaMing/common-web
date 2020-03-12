@@ -11,7 +11,7 @@ import java.util.List;
  * @editor:IntelliJ IDEA
  * @other:
  **/
-public class ResultList implements Serializable {
+public class ResultPages implements Serializable {
 
     private long total;
 
@@ -21,7 +21,7 @@ public class ResultList implements Serializable {
      * @param total
      * @param rows
      */
-    public ResultList(long total, List<?> rows) {
+    public ResultPages(long total, List<?> rows) {
         super();
         this.total = total;
         this.rows = rows;

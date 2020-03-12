@@ -1,4 +1,4 @@
-package com.wonders.commonweb.core.model;
+package com.wonders.commonweb.demo.model;
 
 import com.wonders.commonweb.core.model.common.CommonModel;
 import lombok.Data;
@@ -16,5 +16,6 @@ public class DemoTable extends CommonModel {
 
     private String owner;
     private String tableName;
+    private String tablespaceName;
 
 }

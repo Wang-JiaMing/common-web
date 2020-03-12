@@ -1,7 +1,7 @@
 package com.wonders.commonweb.core.service.impl;
 
 import com.wonders.commonweb.core.dao.ICommonDao;
-import com.wonders.commonweb.core.pages.ResultList;
+import com.wonders.commonweb.core.pages.ResultPages;
 import com.wonders.commonweb.core.service.ICommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class CommonServiceImpl implements ICommonService {
     }
 
     @Override
-    public ResultList queryForResultList(Map<String, String> params) {
+    public ResultPages queryForResultList(Map<String, String> params) {
         String sortString = null;
         if (params.containsKey("sortField")) {
             if (params.containsKey("sort")) {
@@ -59,7 +59,7 @@ public class CommonServiceImpl implements ICommonService {
         mainSql.append(")page where page.rn>" + (Integer.valueOf(params.get("offset"))) + " and page.rn<=" + ((Integer.valueOf(params.get("offset")))+ Integer.valueOf(params.get("limit"))));
         useParams.put("sql", mainSql.toString());
         List<Map<String, Object>> mainResult = commonDao.query(useParams);
-        ResultList resultList = new ResultList(Long.valueOf(totalResult.get(0).get("TOTAL").toString()), mainResult);
-        return resultList;
+        ResultPages resultPages = new ResultPages(Long.valueOf(totalResult.get(0).get("TOTAL").toString()), mainResult);
+        return resultPages;
     }
 }

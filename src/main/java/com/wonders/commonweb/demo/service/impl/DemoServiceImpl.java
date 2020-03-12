@@ -1,14 +1,15 @@
-package com.wonders.commonweb.core.service.impl;
+package com.wonders.commonweb.demo.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wonders.commonweb.core.dao.IDemoDao;
-import com.wonders.commonweb.core.model.DemoTable;
-import com.wonders.commonweb.core.pages.ResultList;
-import com.wonders.commonweb.core.service.IDemoService;
+import com.wonders.commonweb.demo.dao.IDemoDao;
+import com.wonders.commonweb.demo.model.DemoTable;
+import com.wonders.commonweb.core.pages.ResultPages;
+import com.wonders.commonweb.demo.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class DemoServiceImpl implements IDemoService {
     IDemoDao demoDao;
 
     @Override
-    public ResultList getAllTableName(DemoTable demoTable) {
+    public ResultPages getAllTableName(DemoTable demoTable) {
         /**
          * 获取页面传入的行数和页数
          *      使用分页插件进行分页
@@ -35,8 +36,8 @@ public class DemoServiceImpl implements IDemoService {
         PageHelper.startPage(Integer.valueOf(demoTable.getOffset()), Integer.valueOf(demoTable.getLimit()));
         List<DemoTable> allTableName=demoDao.selectAllTableName(demoTable);
         PageInfo<DemoTable> pojoPageInfo = new PageInfo<>(allTableName);
-        ResultList resultList = new ResultList(pojoPageInfo.getTotal(), allTableName);
-        return resultList;
+        ResultPages resultPages = new ResultPages(pojoPageInfo.getTotal(), allTableName);
+        return resultPages;
     }
 
     @Override

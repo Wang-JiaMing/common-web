@@ -1,7 +1,7 @@
-package com.wonders.commonweb.core.service;
+package com.wonders.commonweb.demo.service;
 
-import com.wonders.commonweb.core.model.DemoTable;
-import com.wonders.commonweb.core.pages.ResultList;
+import com.wonders.commonweb.demo.model.DemoTable;
+import com.wonders.commonweb.core.pages.ResultPages;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +16,8 @@ import java.util.Map;
  **/
 public interface IDemoService {
 
-    ResultList getAllTableName(DemoTable demoTable);
+    ResultPages getAllTableName(DemoTable demoTable);
 
     List<Map<String,Object>> getAllTableName2(DemoTable demoTable);
+
 }

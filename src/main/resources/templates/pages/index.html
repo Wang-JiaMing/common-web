@@ -111,8 +111,8 @@
         </div>
     </div>
 
+<!--    TODO:文件上传 2-->
     <div th:include="include/uploadFile::uploadFile('文件上传','../demoPage/importExp')"></div>
-
 
 </div>
 
@@ -121,6 +121,11 @@
 
     function refresh(url) {
         $('.thfwindows').load(url);
+
+    }
+
+    function refreshToDemo(pageName) {
+        $('.thfwindows').load("../demoPage/index?pageName="+pageName);
 
     }
 

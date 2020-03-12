@@ -41,6 +41,7 @@ public class MyDemoController {
     @Autowired
     ICommonService commonService;
 
+
     /**
      * thymeleaf局部刷新例子
      *
@@ -109,9 +110,10 @@ public class MyDemoController {
         headers.add("title1");
         headers.add("title2");
         List<String> header1 = new ArrayList<>();
-        DemoTable demoTable = new DemoTable();
-        demoTable.setOwner("RHIN_APP");
-        List<Map<String, Object>> results = demoService.getAllTableName2(demoTable);
+
+        Map<String,String> params=new HashMap<>();
+        params.put("sql","select table_name tableName from all_tables");
+        List<Map<String, Object>> results = commonService.query(params);/// demoService.getAllTableName2(demoTable);
         List<List<String>> excelData = DataTrans.ListMapTransDoubleList(results);
         FileUtils.DownloadExcelByDataBase(response, "测试.xls", headers, excelData);
     }

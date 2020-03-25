@@ -6,6 +6,7 @@
 
 ### 开发规范
 程序会不断更新迭代新特性(特性内容可以查阅更新日志)，更新牵涉路径主要
+>PS：com.wonders.commonweb.core.**目录不能做任何修改
 - java:com.wonders.commonweb.core.**
 - html:templates/pages
 

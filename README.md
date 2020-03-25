@@ -1,4 +1,4 @@
-# 通用WEB框架 version 20.3.12.1
+# 通用WEB框架 version 20.3.25.1
 > author:wangjiaming
 
 ### 前言
@@ -22,6 +22,7 @@
 - TODO:动态Excel下载
 - TODO:自动表单插件
 - TODO:页面排版
+- WEBSERVICE:webService特性
 
 ### 更新日志
 - 2020/03/12    完善demo用例，引入缓存框架

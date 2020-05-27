@@ -92,7 +92,7 @@
         <dependency>
             <groupId>com.expkit</groupId>
             <artifactId>expansion-utils</artifactId>
-            <version>2020.2.3.1</version>
+            <version>2020.5.26.1</version>
         </dependency>
 
         <dependency>
@@ -123,7 +123,17 @@
             <version>3.2.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.wonders</groupId>
+            <artifactId>cas</artifactId>
+            <version>3.1.10</version>
+        </dependency>
 
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -7,7 +7,7 @@
             <small>
                 <i class="fa fa-leaf"></i>
                 <!--TODO:系统别名-->
-                通用WEB框架
+                <span>通用WEB框架</span>
             </small>
         </a>
     </div>
@@ -274,7 +274,7 @@
                     <img class="nav-user-photo" src="../images/avatars/avatar2.png" alt="Jason's Photo"/>
                     <span class="user-info">
 									<small>欢迎,</small>
-									超级管理员
+                                    <span th:text="${loginName}"></span>
 								</span>
 
                     <i class="ace-icon fa fa-caret-down"></i>
@@ -298,7 +298,7 @@
                     <li class="divider"></li>
 
                     <li>
-                        <a href="#">
+                        <a onclick="logout()">
                             <i class="ace-icon fa fa-power-off"></i>
                             Logout
                         </a>
@@ -308,5 +308,13 @@
         </ul>
     </div>
 
+
+    <script th:inline="javascript">
+
+        function logout(){
+            window.location.href = "http://192.168.1.200:8080/sso/logout?service="+encodeURIComponent(location.href);
+        }
+
+    </script>
 </div>
 </html>

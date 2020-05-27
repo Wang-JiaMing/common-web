@@ -4,17 +4,14 @@
 <div th:fragment="menu">
 
 
-
-    <ul class="nav nav-list">
+    <ul class="nav nav-list" id="menus">
         <li class="active">
             <a th:onclick="'javascript:refreshToDemo(\'index\')' ">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> Dashboard </span>
             </a>
-
             <b class="arrow"></b>
         </li>
-
         <li class="">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-desktop"></i>
@@ -524,6 +521,114 @@
             </ul>
         </li>
     </ul><!-- /.nav-list -->
+
+
+    <script th:inline="javascript">
+        /**
+         * 约束菜单层级不超过3层
+         */
+        $(function () {
+            if ('true'==[[${IS_SSO_MENUS}]]) {
+                $.ajax({
+                    url: "../indexPage/menus",
+                    dataType: "json",
+                    success: function (data) {
+                        console.info(data)
+                        var secondLevel = 999;
+                        var htmlbegin = "<li class=\"\">"
+                        for (var i = 0; i < data.Result.resourceList.length; i++) {
+                            if (secondLevel > data.Result.resourceList[i].resLevel) {
+                                secondLevel = data.Result.resourceList[i].resLevel;
+                            }
+                        }
+                        secondLevel = secondLevel + 1;
+                        /**
+                         * level 1
+                         *
+                         *             <a th:onclick="'javascript:refreshToDemo(\'index\')' ">
+
+                         */
+                        for (var i = 0; i < data.Result.resourceList.length; i++) {
+                            if (secondLevel == data.Result.resourceList[i].resLevel) {
+                                var downstatus = false;
+                                for (var t = 0; t < data.Result.resourceList.length; t++) {
+                                    if (data.Result.resourceList[i].resid == data.Result.resourceList[t].pid) {
+                                        downstatus = true;
+                                    }
+                                }
+                                var html = " <li class=\"\">\n";
+                                if (downstatus) {
+                                    html += "<a href=\"#\" class=\"dropdown-toggle\">";
+                                } else {
+                                    html += "<a onclick=\"javascript:refresh('../" + data.Result.resourceList[i].url + "')\">";
+                                }
+                                html += "<i class=\"menu-icon fa fa-desktop\"></i><span class=\"menu-text\">\n" + data.Result.resourceList[i].resname + "</span>";
+                                if (downstatus) {
+                                    html += "<b class=\"arrow fa fa-angle-down\"></b>";
+                                }
+                                html += "</a><b class=\"arrow\"></b>";
+                                if (downstatus) {
+                                    html_j = "";
+                                    for (var j = 0; j < data.Result.resourceList.length; j++) {
+                                        if ((secondLevel + 1) == data.Result.resourceList[j].resLevel && data.Result.resourceList[i].resid == data.Result.resourceList[j].pid) {
+                                            if (html_j == "") {
+                                                html_j += "<ul class=\"submenu\"><li class=\"\">";
+                                            }
+                                            var downstatus_2 = false;
+                                            for (var t = 0; t < data.Result.resourceList.length; t++) {
+                                                if (data.Result.resourceList[j].resid == data.Result.resourceList[t].pid) {
+                                                    downstatus_2 = true;
+                                                }
+                                            }
+                                            if (downstatus_2) {
+                                                html_j += "<a href=\"#\" class=\"dropdown-toggle\"> ";
+                                            } else {
+                                                html_j += "<a onclick=\"javascript:refresh('../" + data.Result.resourceList[j].url + "')\">";
+                                            }
+                                            html_j += "<i class=\"menu-icon fa fa-caret-right\"></i>\n" + data.Result.resourceList[j].resname;
+                                            if (downstatus_2) {
+                                                html_j += "<b class=\"arrow fa fa-angle-down\"></b>";
+                                            }
+                                            html_j += "</a><b class=\"arrow\"></b>";
+                                            if (downstatus_2) {
+                                                html_k = "";
+                                                for (var k = 0; k < data.Result.resourceList.length; k++) {
+                                                    if ((secondLevel + 2) == data.Result.resourceList[k].resLevel && data.Result.resourceList[j].resid == data.Result.resourceList[k].pid) {
+                                                        if (html_k == "") {
+                                                            html_k += "<ul class=\"submenu\"><li class=\"\">";
+                                                        }
+                                                        html_k += "<a onclick=\"javascript:refresh('../" + data.Result.resourceList[k].url + "')\"> <i class=\"menu-icon fa fa-caret-right\"></i>\n" + data.Result.resourceList[k].resname;
+                                                        html_k += "</a><b class=\"arrow\"></b>";
+                                                    }
+                                                }
+                                                if (html_k != "") {
+                                                    html_k += "</li></ul>";
+                                                }
+                                                html_j += html_k;
+                                            }
+
+                                        }
+                                    }
+                                    if (html_j != "") {
+                                        html_j += "</li></ul>";
+                                    }
+                                    html += html_j;
+                                }
+                                html += "</li>";
+                                console.info(html);
+                                $('#menus').append(html);
+                            }
+
+                        }
+                    }
+                });
+            }
+        });
+
+
+    </script>
+
+
 </div>
 
 

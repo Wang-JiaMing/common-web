@@ -27,7 +27,7 @@
 - WEBSERVICE:webService特性
 
 ### 更新日志
-####2020/07/08
+#### 2020/07/08
 1. 接入SSO以及AUTH权限框架。
 主要配置在application.properties
 > 1.    IS_SSO_MENUS配置是否通过单点获取权限框架下的菜单[false/true]。

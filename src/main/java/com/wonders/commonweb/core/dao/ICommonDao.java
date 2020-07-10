@@ -22,9 +22,9 @@ public interface ICommonDao {
     @Select("${sql}")
     List<Map<String,Object>> query(Map<String,String> params);
 
-    @Update("${sql")
+    @Update("${sql}")
     void update(Map<String,String> params);
 
-    @Insert("${sql")
+    @Insert("${sql}")
     void insert(Map<String,String> params);
 }

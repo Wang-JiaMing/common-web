@@ -27,6 +27,10 @@
 - WEBSERVICE:webService特性
 
 ### 更新日志
+
+#### 2020/07/15
+1. 升级tomcat版本到9.0.37
+
 #### 2020/07/08
 1. 接入SSO以及AUTH权限框架。
 主要配置在application.properties

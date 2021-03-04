@@ -1,4 +1,4 @@
-# 通用WEB框架 version 20.7.15.1
+# 通用WEB框架 version 21.3.4.1
 > author:wangjiaming
 
 ### 前言
@@ -27,6 +27,9 @@
 - WEBSERVICE:webService特性
 
 ### 更新日志
+
+#### 2021/03/04
+1. 增加安全拦截器XssFilter
 
 #### 2020/07/15
 1. 升级tomcat版本到9.0.37

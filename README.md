@@ -50,6 +50,7 @@ INNER_RESOURCE_URL=/auth/service/webService/getResourcesByUserID/USER_ID/PT_YWJG
 #本地部署的地址，在正式库不要写localhost和127.0.0.1
 LOCAL_SERVER_ADDR=http://localhost:${server.port}
 ```
+2. 如完全不开启sso登陆，可以注掉com.wonders.commonweb.core.config.WebConfig上的@Configuration注解
 
 #### 2020/03/12    
 - 完善demo用例，引入缓存框架

@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 从SESSION中获取信息的工具类
- * 
- * @author "王胤洪"
- * 
  */
 public class SessionUtil {
 
@@ -23,9 +20,6 @@ public class SessionUtil {
 
 	/**
 	 * 在SESSION中放置对象
-	 * 
-	 * @author LiaoChangjun
-	 * 
 	 *         创建时间：2013-2-25 下午03:09:27
 	 * @return
 	 */

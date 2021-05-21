@@ -26,7 +26,7 @@ import java.util.EventListener;
  **/
 //@Configuration
 @Slf4j
-public class WebConfig {
+public class SsoAndAuthConfig {
 
     @Value("${SSO_IP_AND_PORT}")
     private String SSO_IP_AND_PORT;

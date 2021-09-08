@@ -25,6 +25,7 @@ import java.util.EventListener;
  * @other: config fitler
  **/
 //@Configuration
+
 @Slf4j
 public class SsoAndAuthConfig {
 
